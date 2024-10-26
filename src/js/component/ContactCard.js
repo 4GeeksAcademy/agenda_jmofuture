@@ -27,12 +27,12 @@ const ContactCard = ({ contact }) => {
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{contact.name}</h5>
-                            <p className="card-text"><strong>Address:</strong> {contact.address}</p>
-                            <p className="card-text"><strong>Phone:</strong> {contact.phone}</p>
-                            <p className="card-text"><i class="fa-solid fa-envelope"></i><strong>Email:</strong> {contact.email}</p>
+                            <p className="card-text"><strong><i class="fa-solid fa-location-dot"></i> Address:</strong> {contact.address}</p>
+                            <p className="card-text"><strong><i class="fa-solid fa-phone"></i> Phone:</strong> {contact.phone}</p>
+                            <p className="card-text"><i class="fa-solid fa-envelope"></i><strong> Email:</strong> {contact.email}</p>
                             <div className="d-flex gap-2 justify-content-end">
-                                <button className="btn btn-primary" onClick={() => actions.openEditModal(contact)}>Editar</button>
-                                <button className="btn btn-danger" onClick={() => setShowDeleteModal(true)}>Eliminar</button>
+                                <button className="btn btn-primary" onClick={() => actions.openEditModal(contact)}><i class="fa-solid fa-pencil"></i></button>
+                                <button className="btn btn-danger" onClick={() => setShowDeleteModal(true)}><i class="fa-solid fa-trash-can"></i></button>
                             </div>
                         </div>
                     </div>
