@@ -1,15 +1,32 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext, useEffect } from "react";
+import ContactList from "../component/ContactList"; // Asegúrate de que la ruta sea correcta
+import ContactFormModal from "../component/ContactFormModal";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+    const { store, actions } = useContext(Context);
+
+    useEffect(() => {
+        actions.loadContacts();
+    }, []);
+
+    return (
+        <div className="container" style={{ maxWidth: "50vw" }}>
+
+			<div className="d-flex justify-content-end">
+				<button className="btn btn-success my-3" onClick={() => actions.openEditModal(null)}>
+					Agregar Contacto
+				</button>
+			</div>
+
+            <ContactList /> 
+
+            <ContactFormModal 
+                show={store.showModal} 
+                onClose={actions.closeEditModal} 
+                contactToEdit={store.contactToEdit} 
+            />
+        </div>
+    );
+};
