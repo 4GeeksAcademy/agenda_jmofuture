@@ -16,7 +16,7 @@ const ContactCard = ({ contact }) => {
         <>
             <div className="card mb-3" style={{ maxWidth: "100%" }}>
                 <div className="row g-0">
-                    <div className="col-md-4 d-flex justify-content-center align-items-center" style={{ height: "150px" }}> {/* Ajusta la altura aquí */}
+                    <div className="col-md-4 d-flex justify-content-center align-items-center" style={{ height: "150px" }}> 
                         <img 
                             src="https://via.placeholder.com/150" 
                             className="img-fluid rounded-circle" 
