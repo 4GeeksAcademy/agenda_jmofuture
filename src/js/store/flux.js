@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     });
                     if (!resp.ok) throw new Error(`Error creando la agenda: ${resp.status}`);
 
-                    console.log("Agenda created successfully");
+                    console.log("Agenda creada");
                     getActions().loadContacts();
                 } catch (error) {
                     console.error("Error:", error);

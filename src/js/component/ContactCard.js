@@ -20,7 +20,7 @@ const ContactCard = ({ contact }) => {
                         <img 
                             src="https://via.placeholder.com/150" 
                             className="img-fluid rounded-circle" 
-                            alt={`${contact.name}'s avatar`} 
+                            alt={`${contact.name}'foto`} 
                             style={{ width: "100px", height: "100px" }} 
                         />
                     </div>
