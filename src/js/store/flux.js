@@ -15,7 +15,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                     if (!resp.ok) {
                         if (resp.status === 404) {
                             await getActions().createAgenda();
-                            await getActions().loadContacts(); 
                         } else {
                             throw new Error(`Failed to load contacts: ${resp.status}`);
                         }
@@ -97,7 +96,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                             contacts: prevStore.contacts.filter(contact => contact.id !== id),
                         }));
                     } else {
-                        throw new Error(`Failed: ${response.status}`);
+                        throw new Error(`Error: ${response.status}`);
                     }
                 } catch (error) {
                     console.error('Error:', error);

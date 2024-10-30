@@ -7,7 +7,7 @@ const ContactList = () => {
 
     useEffect(() => {
         actions.loadContacts(); 
-    }, [actions]);
+    }, []); 
 
     return (
         <div>
@@ -27,4 +27,3 @@ const ContactList = () => {
 };
 
 export default ContactList;
-
